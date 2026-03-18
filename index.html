@@ -66,9 +66,11 @@
     <script type="module" src="src/main.jsx"></script>
 
     <!-- Nobi Assistant -->
-    <script
-      src="https://assistant-script.nobi.ai/nobi.bundle.js"
-      onload="window.Nobi.initialize({ merchantId: 'CHARLIE_BELL_AUTO_MERCHANT_ID' });"
-    ></script>
+    <script src="https://assistant-script.nobi.ai/nobi.bundle.js" async
+      onload="window.Nobi.initialize({
+        accountId: '3764281b-aa0b-4fc3-b566-c8f7775b570c',
+        autoLaunch: ['floating-chat-bar']
+      });">
+    </script>
   </body>
 </html>
