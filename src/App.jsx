@@ -11,6 +11,9 @@ const AboutPage = lazy(() => import("./pages/AboutPage.jsx"));
 const ContactPage = lazy(() => import("./pages/ContactPage.jsx"));
 const SpecialsPage = lazy(() => import("./pages/SpecialsPage.jsx"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
+const DealerAIChatLanding = lazy(() => import("./pages/landing/DealerAIChatLanding.jsx"));
+const DealerChatbotLanding = lazy(() => import("./pages/landing/DealerChatbotLanding.jsx"));
+const AutoAIAssistantLanding = lazy(() => import("./pages/landing/AutoAIAssistantLanding.jsx"));
 
 function LoadingFallback() {
   return (
@@ -24,6 +27,9 @@ export default function App() {
   return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
+        <Route path="/landing/dealer-ai-chat" element={<DealerAIChatLanding />} />
+        <Route path="/landing/dealer-chatbot" element={<DealerChatbotLanding />} />
+        <Route path="/landing/auto-ai-assistant" element={<AutoAIAssistantLanding />} />
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/inventory" element={<InventoryPage />} />
