@@ -103,7 +103,7 @@ export default function VehicleDetailPage() {
         </p>
         <Link
           to="/inventory"
-          className="mt-8 inline-flex items-center px-6 py-3 bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-medium rounded-lg transition-colors"
+          className="mt-8 inline-flex items-center px-6 py-3 bg-[#1E3A5F] hover:bg-[#2d4a7a] text-white font-medium rounded-lg transition-colors"
         >
           Browse Inventory
         </Link>
@@ -218,7 +218,7 @@ export default function VehicleDetailPage() {
               onClick={() => setSelectedThumb(i)}
               className={`flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                 selectedThumb === i
-                  ? "border-[#1B2A4A]"
+                  ? "border-[#1E3A5F]"
                   : "border-transparent hover:border-gray-300"
               }`}
             >
@@ -352,7 +352,7 @@ export default function VehicleDetailPage() {
           <div className="space-y-4 sticky top-4">
             {/* Contact Form */}
             <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-[#1B2A4A] mb-4">Interested in this vehicle?</h3>
+              <h3 className="text-lg font-semibold text-[#1E3A5F] mb-4">Interested in this vehicle?</h3>
               {submitted ? (
                 <div className="py-6 text-center">
                   <CheckCircle className="w-10 h-10 text-green-500 mx-auto mb-3" />
@@ -361,24 +361,24 @@ export default function VehicleDetailPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3">
-                  <input type="text" placeholder="Full Name" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
-                  <input type="email" placeholder="Email Address" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
-                  <input type="tel" placeholder="Phone Number" className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
-                  <select className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]">
+                  <input type="text" placeholder="Full Name" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]" />
+                  <input type="email" placeholder="Email Address" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]" />
+                  <input type="tel" placeholder="Phone Number" className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]" />
+                  <select className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]">
                     <option value="">I'd like to...</option>
                     <option value="availability">Check Availability</option>
                     <option value="test-drive">Schedule a Test Drive</option>
                     <option value="quote">Get a Financing Quote</option>
                   </select>
-                  <textarea placeholder="Additional comments (optional)" rows={3} className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
-                  <button type="submit" className="w-full bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-medium py-2.5 rounded">
+                  <textarea placeholder="Additional comments (optional)" rows={3} className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]" />
+                  <button type="submit" className="w-full bg-[#1E3A5F] hover:bg-[#2d4a7a] text-white font-medium py-2.5 rounded">
                     Send Inquiry
                   </button>
                 </form>
               )}
               <div className="mt-4 pt-4 border-t border-gray-200 text-center">
                 <p className="text-sm text-gray-600">Or call us directly</p>
-                <a href="tel:5125550199" className="text-lg font-semibold text-[#1B2A4A]">(512) 555-0199</a>
+                <a href="tel:5128473261" className="text-lg font-semibold text-[#1E3A5F]">(512) 847-3261</a>
               </div>
             </div>
 

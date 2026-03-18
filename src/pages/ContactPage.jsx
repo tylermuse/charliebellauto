@@ -15,17 +15,17 @@ const contactCards = [
   {
     icon: MapPin,
     title: "Address",
-    detail: "4200 Auto Mall Parkway, Austin, TX 78745",
+    detail: "9831 S Congress Ave, Austin, TX 78745",
     linkLabel: "Get Directions",
-    href: "https://www.google.com/maps/search/?api=1&query=4200+Auto+Mall+Parkway+Austin+TX+78745",
+    href: "https://www.google.com/maps/search/?api=1&query=9831+S+Congress+Ave+Austin+TX+78745",
     external: true,
   },
   {
     icon: Phone,
     title: "Phone",
-    detail: "(512) 555-0199",
+    detail: "(512) 847-3261",
     linkLabel: "Call Us",
-    href: "tel:+15125550199",
+    href: "tel:+15128473261",
     external: true,
   },
   {
@@ -41,17 +41,17 @@ const contactCards = [
 const departments = [
   {
     name: "Sales Department",
-    phone: "(512) 555-0199 ext. 1",
+    phone: "(512) 847-3261 ext. 1",
     hours: "Mon-Fri 9am-8pm",
   },
   {
     name: "Service Center",
-    phone: "(512) 555-0199 ext. 2",
+    phone: "(512) 847-3261 ext. 2",
     hours: "Mon-Fri 7:30am-6pm",
   },
   {
     name: "Parts Department",
-    phone: "(512) 555-0199 ext. 3",
+    phone: "(512) 847-3261 ext. 3",
     hours: "Mon-Fri 7:30am-6pm",
   },
 ];
@@ -81,7 +81,7 @@ export default function ContactPage() {
       {/* ───────────────── Header ───────────────── */}
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-2xl font-bold text-[#1B2A4A]">Contact Us</h1>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]">Contact Us</h1>
         </div>
       </div>
 
@@ -188,7 +188,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-semibold py-3 rounded-lg transition-colors"
+                  className="w-full bg-[#1E3A5F] hover:bg-[#2d4a7a] text-white font-semibold py-3 rounded-lg transition-colors"
                 >
                   Send Message
                 </button>

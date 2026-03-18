@@ -70,7 +70,7 @@ function FilterSection({ title, defaultOpen = true, children }) {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between text-sm font-semibold text-gray-800 hover:text-[#1B2A4A]"
+        className="flex w-full items-center justify-between text-sm font-semibold text-gray-800 hover:text-[#1E3A5F]"
       >
         {title}
         {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -99,7 +99,7 @@ function CheckboxGroup({ options, selected, onChange }) {
               checked ? selected.filter((s) => s !== value) : [...selected, value]
             );
           }}
-          className="h-4 w-4 rounded border-gray-300 text-[#1B2A4A] focus:ring-[#1B2A4A]"
+          className="h-4 w-4 rounded border-gray-300 text-[#1E3A5F] focus:ring-[#1E3A5F]"
         />
         {label}
       </label>
@@ -133,7 +133,7 @@ function AvailabilityModal({ vehicle, onClose }) {
           <X size={20} />
         </button>
 
-        <h3 className="mb-1 text-lg font-bold text-[#1B2A4A]">Check Availability</h3>
+        <h3 className="mb-1 text-lg font-bold text-[#1E3A5F]">Check Availability</h3>
         <p className="mb-4 text-sm text-gray-500">
           {vehicle.year} {vehicle.make} {vehicle.model} {vehicle.trim}
         </p>
@@ -156,7 +156,7 @@ function AvailabilityModal({ vehicle, onClose }) {
               placeholder="Full Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1B2A4A] focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1E3A5F] focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]"
             />
             <input
               required
@@ -164,25 +164,25 @@ function AvailabilityModal({ vehicle, onClose }) {
               placeholder="Email Address"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1B2A4A] focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1E3A5F] focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]"
             />
             <input
               type="tel"
               placeholder="Phone Number"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1B2A4A] focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1E3A5F] focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]"
             />
             <textarea
               placeholder="Message (optional)"
               rows={3}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1B2A4A] focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]"
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1E3A5F] focus:outline-none focus:ring-1 focus:ring-[#1E3A5F]"
             />
             <button
               type="submit"
-              className="w-full rounded-lg bg-[#1B2A4A] py-2.5 text-sm font-semibold text-white transition hover:bg-[#162240]"
+              className="w-full rounded-lg bg-[#1E3A5F] py-2.5 text-sm font-semibold text-white transition hover:bg-[#162240]"
             >
               Submit Inquiry
             </button>
@@ -224,7 +224,7 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
           </div>
           <div className="mt-3 flex items-end justify-between">
             <div>
-              <p className="text-xl font-extrabold text-[#1B2A4A]">{formatPrice(vehicle.price)}</p>
+              <p className="text-xl font-extrabold text-[#1E3A5F]">{formatPrice(vehicle.price)}</p>
               {vehicle.msrp && vehicle.msrp !== vehicle.price && (
                 <p className="text-xs text-gray-400 line-through">MSRP {formatPrice(vehicle.msrp)}</p>
               )}
@@ -232,13 +232,13 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
             <div className="flex gap-2">
               <Link
                 to={`/inventory/${vehicle.id}`}
-                className="rounded-lg bg-[#1B2A4A] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#162240]"
+                className="rounded-lg bg-[#1E3A5F] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#162240]"
               >
                 View Details
               </Link>
               <button
                 onClick={() => onCheckAvailability(vehicle)}
-                className="rounded-lg border-2 border-[#1B2A4A] px-4 py-2 text-xs font-semibold text-[#1B2A4A] transition hover:bg-[#1B2A4A] hover:text-white"
+                className="rounded-lg border-2 border-[#1E3A5F] px-4 py-2 text-xs font-semibold text-[#1E3A5F] transition hover:bg-[#1E3A5F] hover:text-white"
               >
                 Check Availability
               </button>
@@ -262,7 +262,7 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
 
       {/* Body */}
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1B2A4A]">
+        <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1E3A5F]">
           {vehicle.year} {vehicle.make} {vehicle.model} {vehicle.trim}
         </h3>
 
@@ -277,7 +277,7 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
         </p>
 
         <div className="mt-3">
-          <p className="text-xl font-extrabold text-[#1B2A4A]">{formatPrice(vehicle.price)}</p>
+          <p className="text-xl font-extrabold text-[#1E3A5F]">{formatPrice(vehicle.price)}</p>
           {vehicle.msrp && vehicle.msrp !== vehicle.price && (
             <p className="text-xs text-gray-400 line-through">MSRP {formatPrice(vehicle.msrp)}</p>
           )}
@@ -286,13 +286,13 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
         <div className="mt-auto flex gap-2 pt-4">
           <Link
             to={`/inventory/${vehicle.id}`}
-            className="flex-1 rounded-lg bg-[#1B2A4A] py-2 text-center text-xs font-semibold text-white transition hover:bg-[#162240]"
+            className="flex-1 rounded-lg bg-[#1E3A5F] py-2 text-center text-xs font-semibold text-white transition hover:bg-[#162240]"
           >
             View Details
           </Link>
           <button
             onClick={() => onCheckAvailability(vehicle)}
-            className="flex-1 rounded-lg border-2 border-[#1B2A4A] py-2 text-center text-xs font-semibold text-[#1B2A4A] transition hover:bg-[#1B2A4A] hover:text-white"
+            className="flex-1 rounded-lg border-2 border-[#1E3A5F] py-2 text-center text-xs font-semibold text-[#1E3A5F] transition hover:bg-[#1E3A5F] hover:text-white"
           >
             Check Availability
           </button>
@@ -517,7 +517,7 @@ export default function InventoryPage({ condition }) {
           <select
             value={minYear}
             onChange={(e) => setMinYear(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm focus:border-[#1B2A4A] focus:outline-none"
+            className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm focus:border-[#1E3A5F] focus:outline-none"
           >
             <option value="">Min Year</option>
             {allYears.map((y) => (
@@ -528,7 +528,7 @@ export default function InventoryPage({ condition }) {
           <select
             value={maxYear}
             onChange={(e) => setMaxYear(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm focus:border-[#1B2A4A] focus:outline-none"
+            className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm focus:border-[#1E3A5F] focus:outline-none"
           >
             <option value="">Max Year</option>
             {allYears.map((y) => (
@@ -548,7 +548,7 @@ export default function InventoryPage({ condition }) {
               placeholder="Min"
               value={minPrice}
               onChange={(e) => setMinPrice(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 py-1.5 pl-6 pr-2 text-sm focus:border-[#1B2A4A] focus:outline-none"
+              className="w-full rounded-lg border border-gray-300 py-1.5 pl-6 pr-2 text-sm focus:border-[#1E3A5F] focus:outline-none"
             />
           </div>
           <span className="text-gray-400">-</span>
@@ -559,7 +559,7 @@ export default function InventoryPage({ condition }) {
               placeholder="Max"
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 py-1.5 pl-6 pr-2 text-sm focus:border-[#1B2A4A] focus:outline-none"
+              className="w-full rounded-lg border border-gray-300 py-1.5 pl-6 pr-2 text-sm focus:border-[#1E3A5F] focus:outline-none"
             />
           </div>
         </div>
@@ -570,7 +570,7 @@ export default function InventoryPage({ condition }) {
         <select
           value={maxMileage}
           onChange={(e) => setMaxMileage(e.target.value)}
-          className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm focus:border-[#1B2A4A] focus:outline-none"
+          className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-sm focus:border-[#1E3A5F] focus:outline-none"
         >
           <option value="">Any Mileage</option>
           {MILEAGE_OPTIONS.map((opt) => (
@@ -619,19 +619,19 @@ export default function InventoryPage({ condition }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           {/* breadcrumbs */}
           <nav className="mb-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1B2A4A]">Home</Link>
+            <Link to="/" className="hover:text-[#1E3A5F]">Home</Link>
             <span className="mx-2">/</span>
             {conditionLabel ? (
               <>
-                <Link to="/inventory" className="hover:text-[#1B2A4A]">Inventory</Link>
+                <Link to="/inventory" className="hover:text-[#1E3A5F]">Inventory</Link>
                 <span className="mx-2">/</span>
-                <span className="text-[#1B2A4A]">{conditionLabel}</span>
+                <span className="text-[#1E3A5F]">{conditionLabel}</span>
               </>
             ) : (
-              <span className="text-[#1B2A4A]">Inventory</span>
+              <span className="text-[#1E3A5F]">Inventory</span>
             )}
           </nav>
-          <h1 className="text-2xl font-bold text-[#1B2A4A]">
+          <h1 className="text-2xl font-bold text-[#1E3A5F]">
             {conditionLabel ? `${conditionLabel} Vehicles` : "Our Inventory"}
           </h1>
           <p className="mt-1 text-gray-500 text-sm">{filteredVehicles.length} vehicle{filteredVehicles.length !== 1 ? "s" : ""} available</p>
@@ -644,7 +644,7 @@ export default function InventoryPage({ condition }) {
           {/* ── Desktop Filter Sidebar ────────────────────────────────────── */}
           <aside className="hidden w-[280px] shrink-0 lg:block">
             <div className="sticky top-24 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h2 className="mb-3 text-base font-bold text-[#1B2A4A]">Filters</h2>
+              <h2 className="mb-3 text-base font-bold text-[#1E3A5F]">Filters</h2>
               {filterContent}
             </div>
           </aside>
@@ -652,7 +652,7 @@ export default function InventoryPage({ condition }) {
           {/* ── Mobile Filter Button ──────────────────────────────────────── */}
           <button
             onClick={() => setMobileFiltersOpen(true)}
-            className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full bg-[#1B2A4A] px-5 py-3 text-sm font-semibold text-white shadow-lg lg:hidden"
+            className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full bg-[#1E3A5F] px-5 py-3 text-sm font-semibold text-white shadow-lg lg:hidden"
           >
             <SlidersHorizontal size={16} />
             Filters
@@ -677,7 +677,7 @@ export default function InventoryPage({ condition }) {
                   className="fixed inset-y-0 left-0 z-50 w-[320px] max-w-[85vw] overflow-y-auto bg-white p-5 shadow-2xl lg:hidden"
                 >
                   <div className="mb-4 flex items-center justify-between">
-                    <h2 className="text-lg font-bold text-[#1B2A4A]">Filters</h2>
+                    <h2 className="text-lg font-bold text-[#1E3A5F]">Filters</h2>
                     <button onClick={() => setMobileFiltersOpen(false)} className="text-gray-500 hover:text-gray-700">
                       <X size={22} />
                     </button>
@@ -723,7 +723,7 @@ export default function InventoryPage({ condition }) {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1B2A4A] focus:outline-none"
+                  className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-[#1E3A5F] focus:outline-none"
                 >
                   {SORT_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>{o.label}</option>
@@ -734,14 +734,14 @@ export default function InventoryPage({ condition }) {
                 <div className="flex overflow-hidden rounded-lg border border-gray-300">
                   <button
                     onClick={() => setView("grid")}
-                    className={`p-2 transition ${view === "grid" ? "bg-[#1B2A4A] text-white" : "bg-white text-gray-500 hover:bg-gray-50"}`}
+                    className={`p-2 transition ${view === "grid" ? "bg-[#1E3A5F] text-white" : "bg-white text-gray-500 hover:bg-gray-50"}`}
                     title="Grid view"
                   >
                     <Grid3X3 size={16} />
                   </button>
                   <button
                     onClick={() => setView("list")}
-                    className={`p-2 transition ${view === "list" ? "bg-[#1B2A4A] text-white" : "bg-white text-gray-500 hover:bg-gray-50"}`}
+                    className={`p-2 transition ${view === "list" ? "bg-[#1E3A5F] text-white" : "bg-white text-gray-500 hover:bg-gray-50"}`}
                     title="List view"
                   >
                     <List size={16} />
@@ -758,7 +758,7 @@ export default function InventoryPage({ condition }) {
                 <p className="mt-1 text-sm text-gray-400">Try adjusting your search criteria</p>
                 <button
                   onClick={clearFilters}
-                  className="mt-4 rounded-lg bg-[#1B2A4A] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#162240]"
+                  className="mt-4 rounded-lg bg-[#1E3A5F] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#162240]"
                 >
                   Clear All Filters
                 </button>
@@ -813,7 +813,7 @@ export default function InventoryPage({ condition }) {
                     onClick={() => goToPage(p)}
                     className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
                       p === safePage
-                        ? "bg-[#1B2A4A] text-white"
+                        ? "bg-[#1E3A5F] text-white"
                         : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >

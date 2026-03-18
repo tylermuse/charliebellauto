@@ -163,7 +163,7 @@ export default function ServicePage() {
       {/* Page Header */}
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-2xl font-bold text-[#1B2A4A]">Service & Parts</h1>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]">Service & Parts</h1>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ export default function ServicePage() {
         <div className="max-w-3xl mx-auto px-4">
           <div>
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
                 Schedule Service
               </h2>
             </div>
@@ -182,7 +182,7 @@ export default function ServicePage() {
                 className="bg-white rounded-xl p-10 text-center shadow-lg"
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1B2A4A] mb-3">
+                <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
                   Appointment Requested!
                 </h3>
                 <p className="text-gray-600 text-lg">
@@ -207,7 +207,7 @@ export default function ServicePage() {
                       value={serviceForm.firstName}
                       onChange={handleServiceChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -220,7 +220,7 @@ export default function ServicePage() {
                       value={serviceForm.lastName}
                       onChange={handleServiceChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -235,7 +235,7 @@ export default function ServicePage() {
                       value={serviceForm.email}
                       onChange={handleServiceChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -248,7 +248,7 @@ export default function ServicePage() {
                       value={serviceForm.phone}
                       onChange={handleServiceChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -264,7 +264,7 @@ export default function ServicePage() {
                       onChange={handleServiceChange}
                       placeholder="e.g., 2022"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -278,7 +278,7 @@ export default function ServicePage() {
                       onChange={handleServiceChange}
                       placeholder="e.g., Toyota"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -292,7 +292,7 @@ export default function ServicePage() {
                       onChange={handleServiceChange}
                       placeholder="e.g., Camry"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -305,7 +305,7 @@ export default function ServicePage() {
                     value={serviceForm.serviceType}
                     onChange={handleServiceChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] bg-white"
                   >
                     <option value="">Select a service</option>
                     {serviceTypes.map((type) => (
@@ -326,7 +326,7 @@ export default function ServicePage() {
                       value={serviceForm.preferredDate}
                       onChange={handleServiceChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -338,7 +338,7 @@ export default function ServicePage() {
                       value={serviceForm.preferredTime}
                       onChange={handleServiceChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] bg-white"
                     >
                       <option value="">Select a time</option>
                       {timeSlots.map((slot) => (
@@ -359,12 +359,12 @@ export default function ServicePage() {
                     onChange={handleServiceChange}
                     rows={3}
                     placeholder="Describe any symptoms or concerns..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#1B2A4A] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
+                  className="w-full py-3 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
                 >
                   Request Appointment
                 </button>
@@ -380,7 +380,7 @@ export default function ServicePage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
               Service Menu
             </h2>
             <p className="text-gray-600">
@@ -395,10 +395,10 @@ export default function ServicePage() {
                 key={service.name}
                 className="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-lg font-bold text-[#1B2A4A] mb-1">
+                <h3 className="text-lg font-bold text-[#1E3A5F] mb-1">
                   {service.name}
                 </h3>
-                <p className="text-[#D4A843] font-semibold mb-3">
+                <p className="text-[#C45D3E] font-semibold mb-3">
                   {service.price}
                 </p>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -416,7 +416,7 @@ export default function ServicePage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
               Service Specials
             </h2>
           </div>
@@ -426,9 +426,9 @@ export default function ServicePage() {
             {specials.map((special, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 border-2 border-dashed border-[#D4A843] text-center hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl p-6 border-2 border-dashed border-[#C45D3E] text-center hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-xl font-bold text-[#1B2A4A] mb-3">
+                <h3 className="text-xl font-bold text-[#1E3A5F] mb-3">
                   {special.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{special.details}</p>
@@ -448,7 +448,7 @@ export default function ServicePage() {
         <div className="max-w-3xl mx-auto px-4">
           <div>
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
                 Parts Request
               </h2>
               <p className="text-gray-600">
@@ -462,7 +462,7 @@ export default function ServicePage() {
                 className="bg-gray-50 rounded-xl p-10 text-center shadow-lg"
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1B2A4A] mb-3">
+                <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
                   Request Submitted!
                 </h3>
                 <p className="text-gray-600 text-lg">
@@ -486,7 +486,7 @@ export default function ServicePage() {
                       value={partsForm.name}
                       onChange={handlePartsChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -499,7 +499,7 @@ export default function ServicePage() {
                       value={partsForm.email}
                       onChange={handlePartsChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -514,7 +514,7 @@ export default function ServicePage() {
                       value={partsForm.phone}
                       onChange={handlePartsChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -526,7 +526,7 @@ export default function ServicePage() {
                       value={partsForm.urgency}
                       onChange={handlePartsChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] bg-white"
                     >
                       <option value="">Select urgency</option>
                       {urgencyOptions.map((opt) => (
@@ -549,7 +549,7 @@ export default function ServicePage() {
                       onChange={handlePartsChange}
                       placeholder="e.g., 2022"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -563,7 +563,7 @@ export default function ServicePage() {
                       onChange={handlePartsChange}
                       placeholder="e.g., Honda"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -577,7 +577,7 @@ export default function ServicePage() {
                       onChange={handlePartsChange}
                       placeholder="e.g., Civic"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -592,12 +592,12 @@ export default function ServicePage() {
                     rows={3}
                     required
                     placeholder="Describe the part you need, including any part numbers if available..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#1B2A4A] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
+                  className="w-full py-3 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
                 >
                   Submit Parts Request
                 </button>

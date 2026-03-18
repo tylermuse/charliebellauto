@@ -12,7 +12,7 @@ body {
 
 /* Vehicle image placeholder gradients */
 .vehicle-placeholder {
-  background: linear-gradient(135deg, #1B2A4A 0%, #2d4a7a 50%, #4164a5 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #274f82 50%, #3269a5 100%);
 }
 
 /* Custom scrollbar for filter sidebar */
@@ -23,11 +23,43 @@ body {
   background: transparent;
 }
 .filter-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(27, 42, 74, 0.2);
+  background-color: rgba(30, 58, 95, 0.2);
   border-radius: 9999px;
 }
 
 /* Gallery lightbox */
 .lightbox-overlay {
   backdrop-filter: blur(8px);
+}
+
+/* Custom component classes */
+.card-hover {
+  @apply shadow-sm hover:shadow-md transition-shadow duration-200;
+}
+
+.section-narrow {
+  @apply max-w-5xl mx-auto;
+}
+
+/* Heading typography */
+h1, h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+/* Custom nav underline on hover */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #1E3A5F;
+  transition: width 0.2s ease;
+}
+.nav-link-underline:hover::after {
+  width: 100%;
 }

@@ -60,7 +60,7 @@ const MAKE_GRADIENTS = {
   Toyota: ["#CC0000", "#8A0000"],
   Honda: ["#1A3A7A", "#0A1A4A"],
   Ford: ["#003478", "#001A4A"],
-  Chevrolet: ["#D4A843", "#9A7830"],
+  Chevrolet: ["#C45D3E", "#9A7830"],
   Hyundai: ["#002C5F", "#001A3A"],
   BMW: ["#1C69D4", "#0A3A7A"],
   "Mercedes-Benz": ["#333333", "#1A1A1A"],
@@ -82,7 +82,7 @@ function getGradient(vehicle) {
   if (colorGrad) return colorGrad;
   const makeGrad = MAKE_GRADIENTS[vehicle.make];
   if (makeGrad) return makeGrad;
-  return ["#1B2A4A", "#0f1926"];
+  return ["#1E3A5F", "#0f1926"];
 }
 
 /**

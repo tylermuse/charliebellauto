@@ -77,13 +77,13 @@ function FAQItem({ item }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
       >
-        <span className="font-semibold text-[#1B2A4A] text-lg pr-4">
+        <span className="font-semibold text-[#1E3A5F] text-lg pr-4">
           {item.question}
         </span>
         {open ? (
-          <ChevronUp className="w-5 h-5 text-[#1B2A4A] flex-shrink-0" />
+          <ChevronUp className="w-5 h-5 text-[#1E3A5F] flex-shrink-0" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-[#1B2A4A] flex-shrink-0" />
+          <ChevronDown className="w-5 h-5 text-[#1E3A5F] flex-shrink-0" />
         )}
       </button>
       {open && (
@@ -158,14 +158,14 @@ export default function FinancePage() {
       {/* Page Header */}
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-2xl font-bold text-[#1B2A4A]">Finance</h1>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]">Finance</h1>
         </div>
       </div>
 
       {/* Payment Calculator */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-[#1B2A4A] text-center mb-10">
+          <h2 className="text-3xl font-bold text-[#1E3A5F] text-center mb-10">
             Payment Calculator
           </h2>
 
@@ -173,7 +173,7 @@ export default function FinancePage() {
             {/* Inputs */}
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
+                <label className="block text-sm font-medium text-[#1E3A5F] mb-1">
                   Vehicle Price
                 </label>
                 <div className="relative">
@@ -182,12 +182,12 @@ export default function FinancePage() {
                     type="number"
                     value={vehiclePrice}
                     onChange={(e) => setVehiclePrice(Number(e.target.value))}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1E3A5F] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
+                <label className="block text-sm font-medium text-[#1E3A5F] mb-1">
                   Down Payment
                 </label>
                 <div className="relative">
@@ -196,12 +196,12 @@ export default function FinancePage() {
                     type="number"
                     value={downPayment}
                     onChange={(e) => setDownPayment(Number(e.target.value))}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1E3A5F] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
+                <label className="block text-sm font-medium text-[#1E3A5F] mb-1">
                   Trade-in Value
                 </label>
                 <div className="relative">
@@ -210,12 +210,12 @@ export default function FinancePage() {
                     type="number"
                     value={tradeIn}
                     onChange={(e) => setTradeIn(Number(e.target.value))}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1E3A5F] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
+                <label className="block text-sm font-medium text-[#1E3A5F] mb-1">
                   Interest Rate (APR %)
                 </label>
                 <input
@@ -223,11 +223,11 @@ export default function FinancePage() {
                   step="0.1"
                   value={interestRate}
                   onChange={(e) => setInterestRate(Number(e.target.value))}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1E3A5F] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1B2A4A] mb-2">
+                <label className="block text-sm font-medium text-[#1E3A5F] mb-2">
                   Loan Term (months)
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -237,7 +237,7 @@ export default function FinancePage() {
                       onClick={() => setLoanTerm(term)}
                       className={`px-5 py-2 rounded-lg font-medium transition-colors ${
                         loanTerm === term
-                          ? "bg-[#1B2A4A] text-white"
+                          ? "bg-[#1E3A5F] text-white"
                           : "bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200"
                       }`}
                     >
@@ -254,7 +254,7 @@ export default function FinancePage() {
                 <p className="text-gray-500 text-sm uppercase tracking-wide mb-1">
                   Estimated Monthly Payment
                 </p>
-                <p className="text-5xl md:text-6xl font-bold text-[#D4A843]">
+                <p className="text-5xl md:text-6xl font-bold text-[#C45D3E]">
                   {formatCurrency(calculations.monthlyPayment)}
                 </p>
                 <p className="text-gray-400 text-sm mt-1">per month</p>
@@ -262,19 +262,19 @@ export default function FinancePage() {
               <div className="space-y-4">
                 <div className="flex justify-between border-b border-gray-200 pb-2">
                   <span className="text-gray-600">Total Amount Financed</span>
-                  <span className="font-semibold text-[#1B2A4A]">
+                  <span className="font-semibold text-[#1E3A5F]">
                     {formatCurrency(calculations.totalFinanced)}
                   </span>
                 </div>
                 <div className="flex justify-between border-b border-gray-200 pb-2">
                   <span className="text-gray-600">Total Interest Paid</span>
-                  <span className="font-semibold text-[#1B2A4A]">
+                  <span className="font-semibold text-[#1E3A5F]">
                     {formatCurrency(calculations.totalInterest)}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Total Cost</span>
-                  <span className="font-semibold text-[#D4A843]">
+                  <span className="font-semibold text-[#C45D3E]">
                     {formatCurrency(calculations.totalCost)}
                   </span>
                 </div>
@@ -289,7 +289,7 @@ export default function FinancePage() {
         <div className="max-w-3xl mx-auto px-4">
           <div>
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
                 Get Pre-Approved in Minutes
               </h2>
             </div>
@@ -299,7 +299,7 @@ export default function FinancePage() {
                 className="bg-white rounded-xl p-10 text-center shadow-lg"
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-[#1B2A4A] mb-3">
+                <h3 className="text-2xl font-bold text-[#1E3A5F] mb-3">
                   Thank You!
                 </h3>
                 <p className="text-gray-600 text-lg">
@@ -323,7 +323,7 @@ export default function FinancePage() {
                       value={formData.firstName}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -336,7 +336,7 @@ export default function FinancePage() {
                       value={formData.lastName}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -351,7 +351,7 @@ export default function FinancePage() {
                       value={formData.email}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                   <div>
@@ -364,7 +364,7 @@ export default function FinancePage() {
                       value={formData.phone}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                     />
                   </div>
                 </div>
@@ -378,7 +378,7 @@ export default function FinancePage() {
                       value={formData.annualIncome}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] bg-white"
                     >
                       <option value="">Select range</option>
                       {incomeRanges.map((range) => (
@@ -397,7 +397,7 @@ export default function FinancePage() {
                       value={formData.employmentStatus}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F] bg-white"
                     >
                       <option value="">Select status</option>
                       {employmentStatuses.map((status) => (
@@ -418,7 +418,7 @@ export default function FinancePage() {
                     value={formData.desiredVehicle}
                     onChange={handleFormChange}
                     placeholder="e.g., 2024 Toyota Camry"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
                 <div>
@@ -430,12 +430,12 @@ export default function FinancePage() {
                     value={formData.comments}
                     onChange={handleFormChange}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A5F]"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#1B2A4A] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
+                  className="w-full py-3 bg-[#1E3A5F] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
                 >
                   Submit Pre-Approval Application
                 </button>
@@ -457,7 +457,7 @@ export default function FinancePage() {
           <div
             className="text-center mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
               Financing FAQ
             </h2>
             <p className="text-gray-600">
@@ -480,7 +480,7 @@ export default function FinancePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div>
-            <h2 className="text-2xl font-bold text-[#1B2A4A] text-center mb-8">
+            <h2 className="text-2xl font-bold text-[#1E3A5F] text-center mb-8">
               Our Lending Partners
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -489,7 +489,7 @@ export default function FinancePage() {
                   key={lender}
                   className="bg-white rounded-lg border border-gray-200 px-4 py-6 flex items-center justify-center shadow-sm"
                 >
-                  <span className="font-semibold text-[#1B2A4A] text-sm text-center">
+                  <span className="font-semibold text-[#1E3A5F] text-sm text-center">
                     {lender}
                   </span>
                 </div>

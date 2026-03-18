@@ -11,12 +11,12 @@ const teamMembers = [
 ];
 
 const avatarGradients = [
-  "from-[#1B2A4A] to-[#2d4470]",
-  "from-[#1B2A4A] to-[#2d4470]",
-  "from-[#1B2A4A] to-[#3a5a8a]",
-  "from-[#1B2A4A] to-[#2d4470]",
-  "from-[#1B2A4A] to-[#2d4470]",
-  "from-[#1B2A4A] to-[#3a5a8a]",
+  "from-[#1E3A5F] to-[#2d4470]",
+  "from-[#1E3A5F] to-[#2d4470]",
+  "from-[#1E3A5F] to-[#3a5a8a]",
+  "from-[#1E3A5F] to-[#2d4470]",
+  "from-[#1E3A5F] to-[#2d4470]",
+  "from-[#1E3A5F] to-[#3a5a8a]",
 ];
 
 const awards = [
@@ -71,7 +71,7 @@ export default function AboutPage() {
       {/* Page Header */}
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-2xl font-bold text-[#1B2A4A]">About Us</h1>
+          <h1 className="text-2xl font-bold text-[#1E3A5F]">About Us</h1>
         </div>
       </div>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4">
           <div>
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-8 text-center"
+              className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-8 text-center"
             >
               Our Story
             </h2>
@@ -121,7 +121,7 @@ export default function AboutPage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
               Meet Our Team
             </h2>
           </div>
@@ -140,10 +140,10 @@ export default function AboutPage() {
                     {member.initials}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-[#1B2A4A]">
+                <h3 className="text-xl font-bold text-[#1E3A5F]">
                   {member.name}
                 </h3>
-                <p className="text-[#1B2A4A] font-medium mt-1">
+                <p className="text-[#1E3A5F] font-medium mt-1">
                   {member.title}
                 </p>
               </div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-3">
               Awards &amp; Certifications
             </h2>
           </div>
@@ -168,13 +168,13 @@ export default function AboutPage() {
             {awards.map((award, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-xl p-6 text-center border-2 border-[#1B2A4A]/10 hover:border-[#1B2A4A]/30 transition-colors"
+                className="bg-gray-50 rounded-xl p-6 text-center border-2 border-[#1E3A5F]/10 hover:border-[#1E3A5F]/30 transition-colors"
               >
-                <h3 className="text-lg font-bold text-[#1B2A4A]">
+                <h3 className="text-lg font-bold text-[#1E3A5F]">
                   {award.title}
                 </h3>
                 {award.subtitle && (
-                  <p className="text-[#1B2A4A] font-medium text-sm mt-1">
+                  <p className="text-[#1E3A5F] font-medium text-sm mt-1">
                     {award.subtitle}
                   </p>
                 )}
@@ -190,7 +190,7 @@ export default function AboutPage() {
           <div
             className="text-center mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A5F] mb-4">
               Giving Back to Austin
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -207,7 +207,7 @@ export default function AboutPage() {
                 key={index}
                 className="bg-white rounded-xl p-6 shadow-sm"
               >
-                <h3 className="font-bold text-[#1B2A4A] text-lg">
+                <h3 className="font-bold text-[#1E3A5F] text-lg">
                   {item.name}
                 </h3>
                 <p className="text-gray-600 mt-1">{item.detail}</p>
