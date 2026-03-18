@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   Gauge,
   Cog,
@@ -11,18 +10,11 @@ import {
   CheckCircle,
   ChevronLeft,
   ChevronRight,
-  ChevronDown,
-  ChevronUp,
   Home,
   ShieldCheck,
-  Calendar,
-  DollarSign,
-  Car,
 } from "lucide-react";
 import { vehicles } from "../data/inventory";
 import VehicleImage from "../components/VehicleImage";
-
-const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
 
 function calculateMonthly(price, months = 72, apr = 6.9) {
   const r = apr / 100 / 12;
@@ -45,83 +37,6 @@ function conditionColor(vehicle) {
 function conditionPath(vehicle) {
   if (vehicle.condition === "certified") return "/inventory/certified";
   return `/inventory/${vehicle.condition}`;
-}
-
-/* ---------- Lead Form Card (accordion) ---------- */
-function LeadFormCard({ title, icon: Icon, defaultOpen, fields }) {
-  const [open, setOpen] = useState(defaultOpen);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 bg-white hover:bg-gray-50 transition-colors"
-      >
-        <span className="flex items-center gap-2 font-semibold text-navy-700">
-          <Icon className="w-5 h-5" />
-          {title}
-        </span>
-        {open ? (
-          <ChevronUp className="w-5 h-5 text-gray-400" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-gray-400" />
-        )}
-      </button>
-
-      {open && (
-        <div className="px-5 pb-5 bg-white">
-          {submitted ? (
-            <div className="flex items-center gap-2 text-green-700 bg-green-50 rounded-lg p-4 text-sm">
-              <CheckCircle className="w-5 h-5 flex-shrink-0" />
-              Thank you! A member of our team will contact you shortly.
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-3">
-              {fields.map((f) => {
-                if (f.type === "select") {
-                  return (
-                    <select
-                      key={f.name}
-                      required
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-400"
-                    >
-                      <option value="">{f.placeholder}</option>
-                      {f.options.map((o) => (
-                        <option key={o} value={o}>
-                          {o}
-                        </option>
-                      ))}
-                    </select>
-                  );
-                }
-                return (
-                  <input
-                    key={f.name}
-                    type={f.type || "text"}
-                    placeholder={f.placeholder}
-                    required
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-400"
-                  />
-                );
-              })}
-              <button
-                type="submit"
-                className="w-full py-3 bg-gold-400 hover:bg-gold-500 text-white font-semibold rounded-lg transition-colors"
-              >
-                Submit
-              </button>
-            </form>
-          )}
-        </div>
-      )}
-    </div>
-  );
 }
 
 /* ---------- Similar Vehicle Card ---------- */
@@ -154,7 +69,9 @@ export default function VehicleDetailPage() {
   const vehicle = vehicles.find((v) => v.id === id);
 
   const [selectedThumb, setSelectedThumb] = useState(0);
-  const [openForm, setOpenForm] = useState(0); // not used directly — each card manages its own
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); };
 
   const similar = useMemo(() => {
     if (!vehicle) return [];
@@ -186,7 +103,7 @@ export default function VehicleDetailPage() {
         </p>
         <Link
           to="/inventory"
-          className="mt-8 inline-flex items-center px-6 py-3 bg-gold-400 text-white font-medium rounded-lg hover:bg-gold-500 transition-colors"
+          className="mt-8 inline-flex items-center px-6 py-3 bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-medium rounded-lg transition-colors"
         >
           Browse Inventory
         </Link>
@@ -240,14 +157,11 @@ export default function VehicleDetailPage() {
     setSelectedThumb((p) => (p === GALLERY_LABELS.length - 1 ? 0 : p + 1));
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{ visible: { transition: { staggerChildren: 0.07 } } }}
+    <div
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
     >
       {/* Breadcrumbs */}
-      <motion.nav variants={fade} className="flex items-center gap-2 text-sm text-gray-500 mb-6 flex-wrap">
+      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6 flex-wrap">
         <Link to="/" className="hover:text-navy-700 flex items-center gap-1">
           <Home className="w-4 h-4" /> Home
         </Link>
@@ -261,18 +175,17 @@ export default function VehicleDetailPage() {
         </Link>
         <ChevronRight className="w-3 h-3" />
         <span className="text-navy-700 font-medium">{title}</span>
-      </motion.nav>
+      </nav>
 
       {/* Title (mobile) */}
-      <motion.h1
-        variants={fade}
+      <h1
         className="text-2xl sm:text-3xl font-bold text-navy-700 mb-4 lg:hidden"
       >
         {title}
-      </motion.h1>
+      </h1>
 
       {/* ===== Photo Gallery ===== */}
-      <motion.div variants={fade} className="mb-6">
+      <div className="mb-6">
         {/* Main Image */}
         <div className="relative rounded-xl overflow-hidden group">
           <VehicleImage vehicle={vehicle} aspect="aspect-[16/9]" />
@@ -305,7 +218,7 @@ export default function VehicleDetailPage() {
               onClick={() => setSelectedThumb(i)}
               className={`flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden border-2 transition-colors ${
                 selectedThumb === i
-                  ? "border-gold-400"
+                  ? "border-[#1B2A4A]"
                   : "border-transparent hover:border-gray-300"
               }`}
             >
@@ -313,11 +226,10 @@ export default function VehicleDetailPage() {
             </button>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* ===== Key Specs Bar ===== */}
-      <motion.div
-        variants={fade}
+      <div
         className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 bg-navy-50 rounded-xl p-4 mb-8"
       >
         {specs.map((s, i) => {
@@ -331,23 +243,21 @@ export default function VehicleDetailPage() {
             </div>
           );
         })}
-      </motion.div>
+      </div>
 
       {/* ===== Two Column Layout ===== */}
       <div className="lg:grid lg:grid-cols-5 lg:gap-8">
         {/* LEFT COLUMN */}
         <div className="lg:col-span-3 space-y-8">
           {/* Title (desktop) */}
-          <motion.h1
-            variants={fade}
+          <h1
             className="hidden lg:block text-3xl font-bold text-navy-700"
           >
             {title}
-          </motion.h1>
+          </h1>
 
           {/* Price Block */}
-          <motion.div
-            variants={fade}
+          <div
             className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
           >
             <div className="flex flex-wrap items-baseline gap-3">
@@ -377,10 +287,10 @@ export default function VehicleDetailPage() {
               <span>Stock # {vehicle.stockNumber}</span>
               <span>VIN {vehicle.vin}</span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Description */}
-          <motion.div variants={fade} className="space-y-3">
+          <div className="space-y-3">
             <div className="flex items-center gap-3">
               <h2 className="text-xl font-bold text-navy-700">
                 Vehicle Description
@@ -394,11 +304,11 @@ export default function VehicleDetailPage() {
             <p className="text-gray-600 leading-relaxed">
               {vehicle.description}
             </p>
-          </motion.div>
+          </div>
 
           {/* Features */}
           {vehicle.features && vehicle.features.length > 0 && (
-            <motion.div variants={fade}>
+            <div>
               <h2 className="text-xl font-bold text-navy-700 mb-4">
                 Features &amp; Equipment
               </h2>
@@ -413,11 +323,11 @@ export default function VehicleDetailPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* Details Table */}
-          <motion.div variants={fade}>
+          <div>
             <h2 className="text-xl font-bold text-navy-700 mb-4">
               Vehicle Details
             </h2>
@@ -434,62 +344,43 @@ export default function VehicleDetailPage() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* RIGHT COLUMN */}
         <div className="lg:col-span-2 mt-8 lg:mt-0 space-y-4">
-          {/* Lead Form Cards */}
-          <motion.div variants={fade} className="space-y-4 sticky top-4">
-            <LeadFormCard
-              title="Check Availability"
-              icon={Car}
-              defaultOpen={true}
-              fields={[
-                { name: "name", placeholder: "Full Name" },
-                { name: "email", type: "email", placeholder: "Email Address" },
-                { name: "phone", type: "tel", placeholder: "Phone Number" },
-              ]}
-            />
-
-            <LeadFormCard
-              title="Schedule a Test Drive"
-              icon={Calendar}
-              defaultOpen={false}
-              fields={[
-                { name: "name", placeholder: "Full Name" },
-                { name: "email", type: "email", placeholder: "Email Address" },
-                { name: "phone", type: "tel", placeholder: "Phone Number" },
-                {
-                  name: "date",
-                  type: "date",
-                  placeholder: "Preferred Date",
-                },
-              ]}
-            />
-
-            <LeadFormCard
-              title="Get a Financing Quote"
-              icon={DollarSign}
-              defaultOpen={false}
-              fields={[
-                { name: "name", placeholder: "Full Name" },
-                { name: "email", type: "email", placeholder: "Email Address" },
-                { name: "phone", type: "tel", placeholder: "Phone Number" },
-                {
-                  name: "credit",
-                  type: "select",
-                  placeholder: "Select Credit Score Range",
-                  options: [
-                    "Excellent (750+)",
-                    "Good (700-749)",
-                    "Fair (650-699)",
-                    "Below Average (600-649)",
-                    "Rebuilding (Below 600)",
-                  ],
-                },
-              ]}
-            />
+          <div className="space-y-4 sticky top-4">
+            {/* Contact Form */}
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-[#1B2A4A] mb-4">Interested in this vehicle?</h3>
+              {submitted ? (
+                <div className="py-6 text-center">
+                  <CheckCircle className="w-10 h-10 text-green-500 mx-auto mb-3" />
+                  <p className="text-lg font-semibold text-gray-800">Thank you!</p>
+                  <p className="text-sm text-gray-500 mt-1">We'll be in touch within the hour.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <input type="text" placeholder="Full Name" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
+                  <input type="email" placeholder="Email Address" required className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
+                  <input type="tel" placeholder="Phone Number" className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
+                  <select className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]">
+                    <option value="">I'd like to...</option>
+                    <option value="availability">Check Availability</option>
+                    <option value="test-drive">Schedule a Test Drive</option>
+                    <option value="quote">Get a Financing Quote</option>
+                  </select>
+                  <textarea placeholder="Additional comments (optional)" rows={3} className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#1B2A4A]" />
+                  <button type="submit" className="w-full bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-medium py-2.5 rounded">
+                    Send Inquiry
+                  </button>
+                </form>
+              )}
+              <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+                <p className="text-sm text-gray-600">Or call us directly</p>
+                <a href="tel:5125550199" className="text-lg font-semibold text-[#1B2A4A]">(512) 555-0199</a>
+              </div>
+            </div>
 
             {/* CARFAX Badge (used/certified only) */}
             {isUsedOrCert && (
@@ -511,13 +402,13 @@ export default function VehicleDetailPage() {
                 </div>
               </div>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* ===== Similar Vehicles ===== */}
       {similar.length > 0 && (
-        <motion.div variants={fade} className="mt-16">
+        <div className="mt-16">
           <h2 className="text-2xl font-bold text-navy-700 mb-6">
             You May Also Like
           </h2>
@@ -526,8 +417,8 @@ export default function VehicleDetailPage() {
               <SimilarCard key={v.id} v={v} />
             ))}
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 }

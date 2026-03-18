@@ -1,29 +1,16 @@
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   Search,
   ChevronLeft,
   ChevronRight,
-  Shield,
-  CheckCircle,
-  FileText,
-  Award,
   Star,
-  Calendar,
-  DollarSign,
-  ArrowLeftRight,
   Clock,
   MapPin,
   Phone,
 } from "lucide-react";
 import { vehicles } from "../data/inventory";
 import VehicleImage from "../components/VehicleImage";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -64,31 +51,23 @@ export default function HomePage() {
   return (
     <div>
       {/* ───────────────── Hero Section ───────────────── */}
-      <section className="relative bg-gradient-to-br from-navy-700 to-navy-600 py-24 md:py-36 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+      <section className="relative h-[500px] bg-cover bg-center" style={{ backgroundImage: "url('/hero-lot.jpg')" }}>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+          <h1
             className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
           >
-            Find Your <span className="text-gold-400">Perfect Drive</span>
-          </motion.h1>
+            Find Your Perfect Drive
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-lg md:text-xl text-navy-200 mb-10 max-w-2xl mx-auto"
+          <p
+            className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto"
           >
             Browse over 200 new and pre-owned vehicles at Austin&rsquo;s most trusted dealership
-          </motion.p>
+          </p>
 
-          <motion.form
+          <form
             onSubmit={handleSearch}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
             className="flex items-center max-w-2xl mx-auto bg-white rounded-full overflow-hidden shadow-lg"
           >
             <Search className="ml-5 text-navy-400 flex-shrink-0" size={20} />
@@ -101,16 +80,13 @@ export default function HomePage() {
             />
             <button
               type="submit"
-              className="bg-gold-400 hover:bg-gold-500 text-navy-800 font-semibold px-6 py-4 transition-colors"
+              className="bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-semibold px-6 py-4 transition-colors"
             >
               Search
             </button>
-          </motion.form>
+          </form>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
+          <div
             className="flex flex-wrap justify-center gap-3 mt-8"
           >
             {[
@@ -121,27 +97,23 @@ export default function HomePage() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="border border-gold-400/50 text-gold-300 hover:bg-gold-400 hover:text-navy-800 rounded-full px-5 py-2 text-sm font-medium transition-colors"
+                className="border border-white/40 text-white hover:bg-white hover:text-[#1B2A4A] rounded-full px-5 py-2 text-sm font-medium transition-colors"
               >
                 {item.label}
               </Link>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ───────────────── Featured Vehicles ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-gray-50 px-4"
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-navy-700">
-              Featured <span className="text-gold-400">Vehicles</span>
+              Featured Vehicles
             </h2>
             <div className="hidden md:flex gap-2">
               <button
@@ -213,70 +185,55 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── Why Choose Us ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-white px-4"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-700 text-center mb-14">
-            Why Choose <span className="text-gold-400">Charlie Bell Auto</span>
+            Why Choose Charlie Bell Auto
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: Shield,
                 title: "No-Haggle Pricing",
                 desc: "Our transparent pricing means the price you see is the price you pay. No games, no gimmicks.",
               },
               {
-                icon: CheckCircle,
                 title: "Certified Inspections",
                 desc: "Every vehicle undergoes a rigorous 150-point inspection before hitting our lot.",
               },
               {
-                icon: FileText,
                 title: "Free CARFAX Reports",
                 desc: "Get complete vehicle history reports at no cost on every pre-owned vehicle.",
               },
               {
-                icon: Award,
                 title: "Lifetime Powertrain Warranty",
                 desc: "Drive with confidence knowing your powertrain is covered for as long as you own the vehicle.",
               },
-            ].map(({ icon: Icon, title, desc }) => (
+            ].map(({ title, desc }) => (
               <div
                 key={title}
                 className="text-center bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold-50 mb-5">
-                  <Icon className="text-gold-400" size={28} />
-                </div>
                 <h3 className="text-lg font-bold text-navy-700 mb-2">{title}</h3>
                 <p className="text-navy-400 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── Current Promotions ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-gray-50 px-4"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-700 text-center mb-14">
-            Current <span className="text-gold-400">Promotions</span>
+            Current Promotions
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -291,7 +248,7 @@ export default function HomePage() {
               </p>
               <Link
                 to="/inventory/new"
-                className="inline-block bg-gold-400 hover:bg-gold-500 text-navy-800 font-semibold px-6 py-2.5 rounded-lg transition-colors"
+                className="inline-block bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
               >
                 View Inventory
               </Link>
@@ -308,26 +265,22 @@ export default function HomePage() {
               </p>
               <Link
                 to="/inventory/certified"
-                className="inline-block bg-gold-400 hover:bg-gold-500 text-navy-800 font-semibold px-6 py-2.5 rounded-lg transition-colors"
+                className="inline-block bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-semibold px-6 py-2.5 rounded-lg transition-colors"
               >
                 Shop CPO
               </Link>
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── Testimonials ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-white px-4"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-700 text-center mb-14">
-            What Our <span className="text-gold-400">Customers Say</span>
+            What Our Customers Say
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -380,19 +333,15 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── Map & Hours ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-gray-50 px-4"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-700 text-center mb-14">
-            Visit <span className="text-gold-400">Our Dealership</span>
+            Visit Our Dealership
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -468,36 +417,28 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── CTA Strip ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-        className="bg-gold-400 py-12 px-4"
+      <section
+        className="bg-gray-100 py-12 px-4"
       >
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { icon: Calendar, label: "Schedule a Test Drive", to: "/contact" },
-            { icon: DollarSign, label: "Get Pre-Approved", to: "/finance" },
-            { icon: ArrowLeftRight, label: "Value Your Trade", to: "/finance" },
-          ].map(({ icon: Icon, label, to }) => (
+            { label: "Schedule a Test Drive", to: "/contact" },
+            { label: "Get Pre-Approved", to: "/finance" },
+            { label: "Value Your Trade", to: "/finance" },
+          ].map(({ label, to }) => (
             <Link
               key={label}
               to={to}
-              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/25 backdrop-blur-sm rounded-xl px-6 py-5 transition-colors group"
+              className="flex items-center justify-center gap-3 bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white rounded-xl px-6 py-5 transition-colors"
             >
-              <Icon
-                size={24}
-                className="text-navy-800 group-hover:scale-110 transition-transform"
-              />
-              <span className="text-navy-800 font-bold text-lg">{label}</span>
+              <span className="font-bold text-lg">{label}</span>
             </Link>
           ))}
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 }

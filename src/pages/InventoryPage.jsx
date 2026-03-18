@@ -196,15 +196,9 @@ function AvailabilityModal({ vehicle, onClose }) {
 // ─── Vehicle Card ──────────────────────────────────────────────────────────
 function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
 
-  const cardMotion = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.35, delay: index * 0.05 },
-  };
-
   if (view === "list") {
     return (
-      <motion.div {...cardMotion} className="flex overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+      <div className="flex overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
         {/* Image */}
         <div className="relative w-56 shrink-0">
           <VehicleImage vehicle={vehicle} aspect="aspect-auto h-full" />
@@ -244,20 +238,20 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
               </Link>
               <button
                 onClick={() => onCheckAvailability(vehicle)}
-                className="rounded-lg border-2 border-[#D4A843] px-4 py-2 text-xs font-semibold text-[#D4A843] transition hover:bg-[#D4A843] hover:text-white"
+                className="rounded-lg border-2 border-[#1B2A4A] px-4 py-2 text-xs font-semibold text-[#1B2A4A] transition hover:bg-[#1B2A4A] hover:text-white"
               >
                 Check Availability
               </button>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     );
   }
 
   // Grid card
   return (
-    <motion.div {...cardMotion} className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg">
+    <div className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg">
       {/* Image */}
       <div className="relative">
         <VehicleImage vehicle={vehicle} />
@@ -298,13 +292,13 @@ function VehicleCard({ vehicle, index, view, onCheckAvailability }) {
           </Link>
           <button
             onClick={() => onCheckAvailability(vehicle)}
-            className="flex-1 rounded-lg border-2 border-[#D4A843] py-2 text-center text-xs font-semibold text-[#D4A843] transition hover:bg-[#D4A843] hover:text-white"
+            className="flex-1 rounded-lg border-2 border-[#1B2A4A] py-2 text-center text-xs font-semibold text-[#1B2A4A] transition hover:bg-[#1B2A4A] hover:text-white"
           >
             Check Availability
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -620,29 +614,27 @@ export default function InventoryPage({ condition }) {
 
   return (
     <div ref={topRef} className="min-h-screen bg-gray-50">
-      {/* ── Hero / Title Area ────────────────────────────────────────────── */}
-      <div className="bg-[#1B2A4A] py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumbs */}
-          <nav className="mb-3 text-sm text-gray-300">
-            <Link to="/" className="hover:text-white transition">Home</Link>
+      {/* ── Header ────────────────────────────────────────────── */}
+      <div className="border-b border-gray-200 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {/* breadcrumbs */}
+          <nav className="mb-2 text-sm text-gray-500">
+            <Link to="/" className="hover:text-[#1B2A4A]">Home</Link>
             <span className="mx-2">/</span>
             {conditionLabel ? (
               <>
-                <Link to="/inventory" className="hover:text-white transition">Inventory</Link>
+                <Link to="/inventory" className="hover:text-[#1B2A4A]">Inventory</Link>
                 <span className="mx-2">/</span>
-                <span className="text-[#D4A843]">{conditionLabel}</span>
+                <span className="text-[#1B2A4A]">{conditionLabel}</span>
               </>
             ) : (
-              <span className="text-[#D4A843]">Inventory</span>
+              <span className="text-[#1B2A4A]">Inventory</span>
             )}
           </nav>
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">
+          <h1 className="text-2xl font-bold text-[#1B2A4A]">
             {conditionLabel ? `${conditionLabel} Vehicles` : "Our Inventory"}
           </h1>
-          <p className="mt-1 text-gray-300">
-            {filteredVehicles.length} vehicle{filteredVehicles.length !== 1 ? "s" : ""} available
-          </p>
+          <p className="mt-1 text-gray-500 text-sm">{filteredVehicles.length} vehicle{filteredVehicles.length !== 1 ? "s" : ""} available</p>
         </div>
       </div>
 

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const subjectOptions = [
   "General Inquiry",
@@ -84,34 +78,15 @@ export default function ContactPage() {
 
   return (
     <div>
-      {/* ───────────────── Hero ───────────────── */}
-      <section className="relative bg-gradient-to-br from-navy-700 to-navy-600 py-20 md:py-28 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight"
-          >
-            Contact <span className="text-gold-400">Us</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-lg md:text-xl text-navy-200 max-w-2xl mx-auto"
-          >
-            We&rsquo;re here to help. Reach out anytime.
-          </motion.p>
+      {/* ───────────────── Header ───────────────── */}
+      <div className="border-b border-gray-200 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <h1 className="text-2xl font-bold text-[#1B2A4A]">Contact Us</h1>
         </div>
-      </section>
+      </div>
 
       {/* ───────────────── Two-Column: Form + Info ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-gray-50 px-4"
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -121,9 +96,6 @@ export default function ContactPage() {
 
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-16 text-center">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
-                  <Send className="text-emerald-600" size={28} />
-                </div>
                 <h3 className="text-xl font-bold text-navy-700 mb-2">Message Sent!</h3>
                 <p className="text-navy-500">
                   Thank you for reaching out! We&rsquo;ll get back to you within 24 hours.
@@ -216,7 +188,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gold-400 hover:bg-gold-500 text-navy-800 font-semibold py-3 rounded-lg transition-colors"
+                  className="w-full bg-[#1B2A4A] hover:bg-[#2d4a7a] text-white font-semibold py-3 rounded-lg transition-colors"
                 >
                   Send Message
                 </button>
@@ -302,19 +274,15 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── Google Maps ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-white px-4"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-700 text-center mb-10">
-            Find <span className="text-gold-400">Us</span>
+            Find Us
           </h2>
           <div className="rounded-2xl overflow-hidden shadow-md">
             <iframe
@@ -328,19 +296,15 @@ export default function ContactPage() {
             />
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* ───────────────── Departments Strip ───────────────── */}
-      <motion.section
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+      <section
         className="py-16 md:py-24 bg-gray-50 px-4"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-700 text-center mb-10">
-            Our <span className="text-gold-400">Departments</span>
+            Our Departments
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -359,7 +323,7 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
     </div>
   );
 }

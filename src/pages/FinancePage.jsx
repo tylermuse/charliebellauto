@@ -1,26 +1,11 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
-  Calculator,
   DollarSign,
-  Clock,
   ChevronDown,
   ChevronUp,
   CheckCircle,
-  Building2,
-  FileText,
 } from "lucide-react";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
 
 const termOptions = [36, 48, 60, 72, 84];
 
@@ -96,9 +81,9 @@ function FAQItem({ item }) {
           {item.question}
         </span>
         {open ? (
-          <ChevronUp className="w-5 h-5 text-[#D4A843] flex-shrink-0" />
+          <ChevronUp className="w-5 h-5 text-[#1B2A4A] flex-shrink-0" />
         ) : (
-          <ChevronDown className="w-5 h-5 text-[#D4A843] flex-shrink-0" />
+          <ChevronDown className="w-5 h-5 text-[#1B2A4A] flex-shrink-0" />
         )}
       </button>
       {open && (
@@ -170,36 +155,25 @@ export default function FinancePage() {
 
   return (
     <div>
-      {/* Payment Calculator Hero */}
-      <section className="bg-[#1B2A4A] text-white py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="text-center mb-12"
-          >
-            <Calculator className="w-12 h-12 text-[#D4A843] mx-auto mb-4" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Finance Your Next Vehicle
-            </h1>
-            <p className="text-xl text-gray-300">
-              Use our calculator to estimate your monthly payments
-            </p>
-          </motion.div>
+      {/* Page Header */}
+      <div className="border-b border-gray-200 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <h1 className="text-2xl font-bold text-[#1B2A4A]">Finance</h1>
+        </div>
+      </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="grid md:grid-cols-2 gap-10"
-          >
+      {/* Payment Calculator */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-[#1B2A4A] text-center mb-10">
+            Payment Calculator
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-10">
             {/* Inputs */}
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
                   Vehicle Price
                 </label>
                 <div className="relative">
@@ -208,12 +182,12 @@ export default function FinancePage() {
                     type="number"
                     value={vehiclePrice}
                     onChange={(e) => setVehiclePrice(Number(e.target.value))}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
                   Down Payment
                 </label>
                 <div className="relative">
@@ -222,12 +196,12 @@ export default function FinancePage() {
                     type="number"
                     value={downPayment}
                     onChange={(e) => setDownPayment(Number(e.target.value))}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
                   Trade-in Value
                 </label>
                 <div className="relative">
@@ -236,12 +210,12 @@ export default function FinancePage() {
                     type="number"
                     value={tradeIn}
                     onChange={(e) => setTradeIn(Number(e.target.value))}
-                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
+                <label className="block text-sm font-medium text-[#1B2A4A] mb-1">
                   Interest Rate (APR %)
                 </label>
                 <input
@@ -249,11 +223,11 @@ export default function FinancePage() {
                   step="0.1"
                   value={interestRate}
                   onChange={(e) => setInterestRate(Number(e.target.value))}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-[#1B2A4A] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-[#1B2A4A] mb-2">
                   Loan Term (months)
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -263,8 +237,8 @@ export default function FinancePage() {
                       onClick={() => setLoanTerm(term)}
                       className={`px-5 py-2 rounded-lg font-medium transition-colors ${
                         loanTerm === term
-                          ? "bg-[#D4A843] text-white"
-                          : "bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20"
+                          ? "bg-[#1B2A4A] text-white"
+                          : "bg-gray-100 border border-gray-300 text-gray-700 hover:bg-gray-200"
                       }`}
                     >
                       {term}
@@ -275,9 +249,9 @@ export default function FinancePage() {
             </div>
 
             {/* Results */}
-            <div className="bg-white/10 backdrop-blur rounded-xl p-8 flex flex-col justify-center">
+            <div className="bg-gray-50 rounded-xl p-8 flex flex-col justify-center">
               <div className="text-center mb-8">
-                <p className="text-gray-300 text-sm uppercase tracking-wide mb-1">
+                <p className="text-gray-500 text-sm uppercase tracking-wide mb-1">
                   Estimated Monthly Payment
                 </p>
                 <p className="text-5xl md:text-6xl font-bold text-[#D4A843]">
@@ -286,50 +260,42 @@ export default function FinancePage() {
                 <p className="text-gray-400 text-sm mt-1">per month</p>
               </div>
               <div className="space-y-4">
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span className="text-gray-300">Total Amount Financed</span>
-                  <span className="font-semibold">
+                <div className="flex justify-between border-b border-gray-200 pb-2">
+                  <span className="text-gray-600">Total Amount Financed</span>
+                  <span className="font-semibold text-[#1B2A4A]">
                     {formatCurrency(calculations.totalFinanced)}
                   </span>
                 </div>
-                <div className="flex justify-between border-b border-white/10 pb-2">
-                  <span className="text-gray-300">Total Interest Paid</span>
-                  <span className="font-semibold">
+                <div className="flex justify-between border-b border-gray-200 pb-2">
+                  <span className="text-gray-600">Total Interest Paid</span>
+                  <span className="font-semibold text-[#1B2A4A]">
                     {formatCurrency(calculations.totalInterest)}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-300">Total Cost</span>
+                  <span className="text-gray-600">Total Cost</span>
                   <span className="font-semibold text-[#D4A843]">
                     {formatCurrency(calculations.totalCost)}
                   </span>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Get Pre-Approved Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
+          <div>
             <div className="text-center mb-10">
-              <FileText className="w-10 h-10 text-[#D4A843] mx-auto mb-3" />
               <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
                 Get Pre-Approved in Minutes
               </h2>
             </div>
 
             {formSubmitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+              <div
                 className="bg-white rounded-xl p-10 text-center shadow-lg"
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
@@ -340,7 +306,7 @@ export default function FinancePage() {
                   Your pre-approval application has been received. A finance
                   specialist will contact you within 24 hours.
                 </p>
-              </motion.div>
+              </div>
             ) : (
               <form
                 onSubmit={handleFormSubmit}
@@ -357,7 +323,7 @@ export default function FinancePage() {
                       value={formData.firstName}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                     />
                   </div>
                   <div>
@@ -370,7 +336,7 @@ export default function FinancePage() {
                       value={formData.lastName}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                     />
                   </div>
                 </div>
@@ -385,7 +351,7 @@ export default function FinancePage() {
                       value={formData.email}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                     />
                   </div>
                   <div>
@@ -398,7 +364,7 @@ export default function FinancePage() {
                       value={formData.phone}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                     />
                   </div>
                 </div>
@@ -412,7 +378,7 @@ export default function FinancePage() {
                       value={formData.annualIncome}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843] bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
                     >
                       <option value="">Select range</option>
                       {incomeRanges.map((range) => (
@@ -431,7 +397,7 @@ export default function FinancePage() {
                       value={formData.employmentStatus}
                       onChange={handleFormChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843] bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A] bg-white"
                     >
                       <option value="">Select status</option>
                       {employmentStatuses.map((status) => (
@@ -452,7 +418,7 @@ export default function FinancePage() {
                     value={formData.desiredVehicle}
                     onChange={handleFormChange}
                     placeholder="e.g., 2024 Toyota Camry"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                   />
                 </div>
                 <div>
@@ -464,12 +430,12 @@ export default function FinancePage() {
                     value={formData.comments}
                     onChange={handleFormChange}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A843]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1B2A4A]"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#D4A843] text-white font-semibold rounded-lg hover:bg-[#c49a3a] transition-colors text-lg"
+                  className="w-full py-3 bg-[#1B2A4A] text-white font-semibold rounded-lg hover:bg-[#2d4a7a] transition-colors text-lg"
                 >
                   Submit Pre-Approval Application
                 </button>
@@ -481,18 +447,14 @@ export default function FinancePage() {
                 </p>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Financing FAQ */}
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
+          <div
             className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#1B2A4A] mb-3">
@@ -501,32 +463,23 @@ export default function FinancePage() {
             <p className="text-gray-600">
               Answers to common questions about financing at Charlie Bell Auto.
             </p>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
+          </div>
+          <div
             className="space-y-3"
           >
             {faqItems.map((item, index) => (
-              <motion.div key={index} variants={fadeInUp}>
+              <div key={index}>
                 <FAQItem item={item} />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Lender Logos Strip */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
+          <div>
             <h2 className="text-2xl font-bold text-[#1B2A4A] text-center mb-8">
               Our Lending Partners
             </h2>
@@ -536,16 +489,13 @@ export default function FinancePage() {
                   key={lender}
                   className="bg-white rounded-lg border border-gray-200 px-4 py-6 flex items-center justify-center shadow-sm"
                 >
-                  <div className="flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-[#1B2A4A]" />
-                    <span className="font-semibold text-[#1B2A4A] text-sm text-center">
-                      {lender}
-                    </span>
-                  </div>
+                  <span className="font-semibold text-[#1B2A4A] text-sm text-center">
+                    {lender}
+                  </span>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
